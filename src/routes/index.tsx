@@ -14,6 +14,12 @@ import g3 from "@/assets/g3.jpg";
 import g4 from "@/assets/g4.jpg";
 import g5 from "@/assets/g5.jpg";
 import g6 from "@/assets/g6.jpg";
+import ocAniversario from "@/assets/oc-aniversario.jpg";
+import ocNamoro from "@/assets/oc-namoro.jpg";
+import ocCasamento from "@/assets/oc-casamento.jpg";
+import ocMaes from "@/assets/oc-maes.jpg";
+import ocCondolencias from "@/assets/oc-condolencias.jpg";
+import ocDecoracao from "@/assets/oc-decoracao.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
