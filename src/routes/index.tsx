@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
 });
 
 // Placeholder — troque pelo número real (formato internacional, só dígitos)
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "5581973146238";
 const wa = (msg: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
@@ -44,12 +44,12 @@ const CATEGORIES = [
 ];
 
 const OCCASIONS = [
-  { title: "Aniversários", desc: "Buquês que marcam o dia." },
-  { title: "Pedidos de namoro", desc: "O gesto que muda tudo." },
-  { title: "Casamentos", desc: "Arranjos para um dia inesquecível." },
-  { title: "Dia das Mães", desc: "Um carinho que floresce." },
-  { title: "Condolências", desc: "Palavras que as flores dizem." },
-  { title: "Decoração", desc: "Beleza viva para sua casa." },
+  { title: "Aniversários", desc: "Buquês que marcam o dia.", img: ocAniversario },
+  { title: "Pedidos de namoro", desc: "O gesto que muda tudo.", img: ocNamoro },
+  { title: "Casamentos", desc: "Arranjos para um dia inesquecível.", img: ocCasamento },
+  { title: "Dia das Mães", desc: "Um carinho que floresce.", img: ocMaes },
+  { title: "Condolências", desc: "Palavras que as flores dizem.", img: ocCondolencias },
+  { title: "Decoração", desc: "Beleza viva para sua casa.", img: ocDecoracao },
 ];
 
 const GALLERY = [
