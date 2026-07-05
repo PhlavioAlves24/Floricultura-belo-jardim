@@ -14,6 +14,12 @@ import g3 from "@/assets/g3.jpg";
 import g4 from "@/assets/g4.jpg";
 import g5 from "@/assets/g5.jpg";
 import g6 from "@/assets/g6.jpg";
+import ocAniversario from "@/assets/oc-aniversario.jpg";
+import ocNamoro from "@/assets/oc-namoro.jpg";
+import ocCasamento from "@/assets/oc-casamento.jpg";
+import ocMaes from "@/assets/oc-maes.jpg";
+import ocCondolencias from "@/assets/oc-condolencias.jpg";
+import ocDecoracao from "@/assets/oc-decoracao.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,7 +31,7 @@ export const Route = createFileRoute("/")({
 });
 
 // Placeholder — troque pelo número real (formato internacional, só dígitos)
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "5581973146238";
 const wa = (msg: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
@@ -38,12 +44,12 @@ const CATEGORIES = [
 ];
 
 const OCCASIONS = [
-  { title: "Aniversários", desc: "Buquês que marcam o dia." },
-  { title: "Pedidos de namoro", desc: "O gesto que muda tudo." },
-  { title: "Casamentos", desc: "Arranjos para um dia inesquecível." },
-  { title: "Dia das Mães", desc: "Um carinho que floresce." },
-  { title: "Condolências", desc: "Palavras que as flores dizem." },
-  { title: "Decoração", desc: "Beleza viva para sua casa." },
+  { title: "Aniversários", desc: "Buquês que marcam o dia.", img: ocAniversario },
+  { title: "Pedidos de namoro", desc: "O gesto que muda tudo.", img: ocNamoro },
+  { title: "Casamentos", desc: "Arranjos para um dia inesquecível.", img: ocCasamento },
+  { title: "Dia das Mães", desc: "Um carinho que floresce.", img: ocMaes },
+  { title: "Condolências", desc: "Palavras que as flores dizem.", img: ocCondolencias },
+  { title: "Decoração", desc: "Beleza viva para sua casa.", img: ocDecoracao },
 ];
 
 const GALLERY = [
@@ -255,26 +261,26 @@ function Index() {
                 href={wa(`Olá! Gostaria de flores para ${o.title.toLowerCase()}.`)}
                 target="_blank"
                 rel="noreferrer"
-                className="reveal group relative flex min-w-[75%] snap-start flex-col justify-end overflow-hidden rounded-sm bg-card p-8 shadow-[0_10px_40px_-20px_rgba(43,43,43,0.2)] md:min-w-[32%]"
-                style={{ minHeight: "360px" }}
+                className="reveal group relative flex min-w-[75%] snap-start flex-col justify-end overflow-hidden rounded-sm bg-card shadow-[0_10px_40px_-20px_rgba(43,43,43,0.2)] md:min-w-[32%]"
+                style={{ minHeight: "440px" }}
               >
-                <div
-                  className="absolute inset-0 bg-gradient-to-br opacity-90 transition-opacity group-hover:opacity-100"
-                  style={{
-                    background:
-                      i % 2 === 0
-                        ? "linear-gradient(160deg, var(--cream), color-mix(in oklab, var(--terracotta) 22%, var(--cream)))"
-                        : "linear-gradient(160deg, var(--cream), color-mix(in oklab, var(--botanical) 22%, var(--cream)))",
-                  }}
+                <img
+                  src={o.img}
+                  alt={o.title}
+                  loading="lazy"
+                  width={1200}
+                  height={900}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="relative">
-                  <span className="text-xs uppercase tracking-[0.3em] text-accent">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+                <div className="relative p-8 text-[color:var(--cream)]">
+                  <span className="text-xs uppercase tracking-[0.3em] text-[color:var(--cream)]/80">
                     0{i + 1}
                   </span>
-                  <h3 className="mt-3 font-display text-3xl text-primary md:text-4xl">
+                  <h3 className="mt-3 font-display text-3xl text-[color:var(--cream)] md:text-4xl">
                     {o.title}
                   </h3>
-                  <p className="mt-3 text-sm text-graphite/80">{o.desc}</p>
+                  <p className="mt-3 text-sm text-[color:var(--cream)]/85">{o.desc}</p>
                 </div>
               </a>
             ))}
